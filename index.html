@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--<meta name="referrer" content="never">-->
+    <!--<meta name="renderer" content="webkit">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> 随机小姐姐-短视频素材库 </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<div>
+    <section id="main">
+        <video id="player" src="https://www.cunshao.com/666666/api/web.php" controls="controls" width="100%" height="90%"></video>
+    </section>
+</div>
+
+<div style="text-align: center;">
+    <section id="buttons">
+        <button id="switch">连续: 开</button>
+        <button id="next1">换</button>
+        <span id="down"><a href="https://brolab.top/">资源站</a></span>
+        <span id="down"><a href="https://v.lcc8.com/sv/index5.html">换频道</a></span>
+    </section>
+</div>
+
+
+<script>
+    (function (window, document) {
+        if (top != self) {
+            window.top.location.replace(self.location.href);
+        }
+        var get = function (id) {
+            return document.getElementById(id);
+        }
+        var bind = function (element, event, callback) {
+            return element.addEventListener(event, callback);
+        }
+        var auto = true;
+        var player = get('player');
+        var randomm = function () {
+            player.src = 'https://www.cunshao.com/666666/api/web.php?_t=' + Math.random();
+            player.play();
+        }
+        bind(get('next1'), 'click', randomm);
+        bind(player, 'error', function () {
+            randomm();
+        });
+        bind(get('switch'), 'click', function () {
+            auto = !auto;
+            this.innerText = '连续: ' + (auto ? '开' : '关');
+        });
+        bind(player, 'ended', function () {
+            if (auto) randomm();
+        });
+    })(window, document);</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9ed3a100a5f540619247b29ed01fda29";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4XJVV1KSED');
+</script>
+
+<style>
+    #switch,#down,#next1,#down{
+        background: #7F9CCC;
+        color:#fff;
+        line-height:40px;
+        text-align:center;
+        width:60px;
+        border:none;
+        margin:0 6px;
+        border-radius:6px;
+        font-weight:bold;
+    }
+</style>
